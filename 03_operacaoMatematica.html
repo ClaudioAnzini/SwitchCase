@@ -1,0 +1,146 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    //PROBLEMA: Faça um script que leia 2 números e em seguida pergunte ao usuário qual operação ele deseja realizar. O resultado da operação deve ser acompanhado de uma frase que diga se o número é:
+    - par ou ímpar;
+    - positivo ou negativo;
+    - inteiro ou decimal.
+    */
+
+    //ENTRADA
+
+    const num1 = parseFloat(prompt(`Insira um número:`).trim().replace(",","."));
+    const num2 = parseFloat(prompt(`Insira outro número:`).trim().replace(",","."));
+    const operação = prompt(`Insira uma operação que você deseja realizar:(+, -, * ou /)`).trim();
+    
+
+    //PROCESSAMENTO
+
+    let conta = 0
+    let sinal = ""
+    let parImpar = ""
+    let inteiroDecimal = ""
+
+    switch(operação){
+        case "+":
+            conta = num1 + num2
+            switch(conta){
+                case (conta % 2 == 0):
+                    parImpar += "par";
+                break;
+                default:
+                    parImpar += "ímpar";
+                break;
+            }
+            inteiroDecimal = Number.isInteger(conta);
+            switch(inteiroDecimal){
+                case true:
+                    inteiroDecimal += "inteiro";
+                break;
+                default:
+                    inteiroDecimal += "decimal";
+                break;
+            }
+            switch(conta){
+                case (conta > 0):
+                    sinal += "positivo";
+                break;
+                default:
+                    sinal += "negativo"
+                break;
+            }
+    }
+    switch(operação){
+        case "-":
+            conta = num1 - num2
+            switch(conta){
+                case ((conta % 2) == 0):
+                    parImpar += "par";
+                break;
+                default:
+                    parImpar += "ímpar";
+                break;
+            }
+            inteiroDecimal = Number.isInteger(conta);
+            switch(inteiroDecimal){
+                case true:
+                    inteiroDecimal += "inteiro";
+                break;
+                default:
+                    inteiroDecimal += "decimal";
+                break;
+            }
+            switch(conta){
+                case (conta > 0):
+                    sinal += "positivo";
+                break;
+                default:
+                    sinal += "negativo"
+                break;
+            }
+    }
+    switch(operação){
+        case "*":
+            conta = num1 * num2
+            switch(conta){
+                case ((conta % 2) == 0):
+                    parImpar += "par";
+                break;
+                default:
+                    parImpar += "ímpar";
+                break;
+            }
+            inteiroDecimal = Number.isInteger(conta);
+            switch(inteiroDecimal){
+                case true:
+                    inteiroDecimal += "inteiro";
+                break;
+                default:
+                    inteiroDecimal += "decimal";
+                break;
+            }
+            switch(conta){
+                case (conta > 0):
+                    sinal += "positivo";
+                break;
+                default:
+                    sinal += "negativo"
+                break;
+            }
+    }
+    switch(operação){
+        case "/":
+            conta = num1 / num2
+            switch(conta){
+                case ((conta % 2) == 0):
+                    parImpar += "par";
+                break;
+                default:
+                    parImpar += "ímpar";
+                break;
+            }
+            inteiroDecimal = Number.isInteger(conta);
+            switch(inteiroDecimal){
+                case true:
+                    inteiroDecimal += "inteiro";
+                break;
+                default:
+                    inteiroDecimal += "decimal";
+                break;
+            }
+            switch(conta){
+                case (conta > 0):
+                    sinal += "positivo";
+                break;
+                default:
+                    sinal += "negativo"
+                break;
+            }
+    }
+    alert(`O resultado da sua conta é ${conta.toFixed(2).replace(".",",")}, ele é , ${parImpar} e ${sinal}.`);
+
+    
+    //SAÍDA
+    
+
+</script>
