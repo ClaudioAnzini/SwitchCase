@@ -7,9 +7,99 @@
 
     //ENTRADA
 
-    
+    const hemisferio = prompt(`Em qual hemisfério você está?(Norte ou Sul).`).trim().toLocaleLowerCase();
+    const mes = prompt(`Qual o mês atual?(coloque o nome por extenso)`).trim().toLocaleLowerCase();
+
     //PROCESSAMENTO
 
+    switch (hemisferio) {
+        case "norte":
+        case "n":
+            switch (mes) {
+                case "março":
+                case "abril":
+                case "maio":
+
+                    alert(`Você está na primavera!`);
+
+                    break;
+
+                case "junho":
+                case "julho":
+                case "agosto":
+
+                    alert(`Você está no verão!`);
+
+                    break;
+
+                case "setembro":
+                case "agosto":
+                case "outubro":
+
+                    alert(`Você esta no outono!`);
+
+                    break;
+
+                case "novembro":
+                case "dezembro":
+                case "janeiro":
+
+                    alert(`Você está no inverno!`);
+
+                    break;
+
+                default:
+
+                    alert(`Insira uma resposta valida!`);
+                    break;
+            }
+            break;
+        
+        case "sul":
+        case "s":
+            
+        switch (mes) {
+                case "março":
+                case "abril":
+                case "maio":
+
+                alert(`Você está na primavera!`);
+
+                    break;
+
+                case "junho":
+                case "julho":
+                case "agosto":
+
+                alert(`Você está no inverno`);
+
+                    break;
+
+                case "setembro":
+                case "agosto":
+                case "outubro":
+
+                alert(`Você está na primavera!`);
+
+                    break;
+
+                case "novembro":
+                case "dezembro":
+                case "janeiro":
+
+                alert(`Você está no verão`);
+
+                    break;
+
+                default:
+
+                    alert(`Insira uma resposta valida!`);
+                    break;
+            }
+        default:
+            alert(`Insira uma resposta valida!`);
+            break;
+    }
 
     //SAÍDA
 

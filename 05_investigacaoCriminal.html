@@ -12,8 +12,83 @@
 
     //ENTRADA
 
+
+    const telefone = prompt(`Você já telefonou para a vítima?(Sim ou Não)`).toLowerCase().trim();
+    const local = prompt(`Você já esteve no local do crime?(Sim ou Não)`).toLowerCase().trim();
+    const mora = prompt(`Você mora perto da vítima?(Sim ou Não)`).toLowerCase().trim();
+    const devia = prompt(`Você devia para a vítima?(Sim ou Não)`).toLowerCase().trim();
+    const trabalhou = prompt(`trabalhou com a vítima?(Sim ou Não)`).toLowerCase().trim();
+
     
     //PROCESSAMENTO
+
+        let suspeita = 0
+
+        switch (telefone) {
+            case "s": 
+            case "sim":
+            suspeita +=1                
+                break;
+        
+            default:
+                break;
+        }
+        switch (local) {
+            case "s": 
+            case "sim":
+            suspeita +=1                
+                break;
+        
+            default:
+                break;
+        }
+        switch (mora) {
+            case "s": 
+            case "sim":
+            suspeita +=1                
+                break;
+        
+            default:
+                break;
+        }
+        switch (devia) {
+            case "s": 
+            case "sim":
+            suspeita +=1                
+                break;
+        
+            default:
+                break;
+        }
+        switch (trabalhou) {
+            case "s": 
+            case "sim":
+            suspeita +=1                
+                break;
+        
+            default:
+                break;
+        }
+        switch (suspeita) {
+            case 5:
+            alert("Classificação: Assassino");
+                
+                break;
+            case 3:
+            case 4:
+            alert("Classificação: Cúmplice")
+
+                break;
+            case 2:
+            alert("Classificação: Suspeita");
+
+                break;
+            default:
+
+            alert("Classificação: Inocente");
+                break;
+        }
+
 
 
     //SAÍDA

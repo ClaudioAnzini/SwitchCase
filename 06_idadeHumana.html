@@ -7,12 +7,45 @@
     // - cães de porte médio: fator 6
     // - cães grandes: fator 7.
 
-    // ENTRADA
+    // ENTRADA  
 
-    
+
+    const porte = prompt(`Insira o porte do seu cachorro(pequeno, médio ou grande).`).trim().toLocaleLowerCase();
+    const idade = parseInt(prompt(`Insira a idade do seu cachorro`).trim().replace(",", "."));
+
+
     // PROCESSAMENTO
 
-    
-    // SAÍDA
+    let numeroPorte = 0
+    let conta = 0
 
-    </script>
+    switch (porte) {
+        case "pequeno":
+        case "p":
+            numeroPorte = 5;
+            break;
+        case "medio":
+        case "m":
+            numeroPorte = 6;
+            break;
+        case "grande":
+        case "g":
+            numeroPorte = 7
+            break;
+        default:
+            numeroPorte = ""
+            break;
+    }
+    conta = numeroPorte * idade;
+
+    // SAÍDA
+    switch (numeroPorte) {
+        case "":
+            alert(`Insira uma resposta valida!`);
+            break;
+        default:
+            alert(`A idade do seu cachorro levando em consideração seu porte é de ${conta} ${conta > 1 ? "anos" : "ano"}.`);
+            break;
+    }
+
+</script>
