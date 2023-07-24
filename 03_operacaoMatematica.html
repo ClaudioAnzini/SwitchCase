@@ -9,138 +9,69 @@
 
     //ENTRADA
 
-    const num1 = parseFloat(prompt(`Insira um número:`).trim().replace(",","."));
-    const num2 = parseFloat(prompt(`Insira outro número:`).trim().replace(",","."));
-    const operação = prompt(`Insira uma operação que você deseja realizar:(+, -, * ou /)`).trim();
-    
+    let numero1 = parseFloat(prompt('Digite o primeiro número:'));
+    let numero2 = parseFloat(prompt('Digite o segundo número:'));
+    let operacao = prompt('Digite a operação desejada (+, -, *, /):');
 
-    //PROCESSAMENTO
+    //Processamento
 
-    let conta = 0
-    let sinal = ""
-    let parImpar = ""
-    let inteiroDecimal = ""
+    let resultado;
 
-    switch(operação){
-        case "+":
-            conta = num1 + num2
-            switch(conta){
-                case (conta % 2 == 0):
-                    parImpar += "par";
-                break;
-                default:
-                    parImpar += "ímpar";
-                break;
-            }
-            inteiroDecimal = Number.isInteger(conta);
-            switch(inteiroDecimal){
-                case true:
-                    inteiroDecimal += "inteiro";
-                break;
-                default:
-                    inteiroDecimal += "decimal";
-                break;
-            }
-            switch(conta){
-                case (conta > 0):
-                    sinal += "positivo";
-                break;
-                default:
-                    sinal += "negativo"
-                break;
-            }
+    switch (operacao) {
+        case '+':
+            resultado = numero1 + numero2;
+            break;
+        case '-':
+            resultado = numero1 - numero2;
+            break;
+        case '*':
+            resultado = numero1 * numero2;
+            break;
+        case '/':
+            resultado = numero1 / numero2;
+            break;
+        default:
+            alert('Operação inválida!');
+            break;
     }
-    switch(operação){
-        case "-":
-            conta = num1 - num2
-            switch(conta){
-                case ((conta % 2) == 0):
-                    parImpar += "par";
-                break;
-                default:
-                    parImpar += "ímpar";
-                break;
-            }
-            inteiroDecimal = Number.isInteger(conta);
-            switch(inteiroDecimal){
-                case true:
-                    inteiroDecimal += "inteiro";
-                break;
-                default:
-                    inteiroDecimal += "decimal";
-                break;
-            }
-            switch(conta){
-                case (conta > 0):
-                    sinal += "positivo";
-                break;
-                default:
-                    sinal += "negativo"
-                break;
-            }
-    }
-    switch(operação){
-        case "*":
-            conta = num1 * num2
-            switch(conta){
-                case ((conta % 2) == 0):
-                    parImpar += "par";
-                break;
-                default:
-                    parImpar += "ímpar";
-                break;
-            }
-            inteiroDecimal = Number.isInteger(conta);
-            switch(inteiroDecimal){
-                case true:
-                    inteiroDecimal += "inteiro";
-                break;
-                default:
-                    inteiroDecimal += "decimal";
-                break;
-            }
-            switch(conta){
-                case (conta > 0):
-                    sinal += "positivo";
-                break;
-                default:
-                    sinal += "negativo"
-                break;
-            }
-    }
-    switch(operação){
-        case "/":
-            conta = num1 / num2
-            switch(conta){
-                case ((conta % 2) == 0):
-                    parImpar += "par";
-                break;
-                default:
-                    parImpar += "ímpar";
-                break;
-            }
-            inteiroDecimal = Number.isInteger(conta);
-            switch(inteiroDecimal){
-                case true:
-                    inteiroDecimal += "inteiro";
-                break;
-                default:
-                    inteiroDecimal += "decimal";
-                break;
-            }
-            switch(conta){
-                case (conta > 0):
-                    sinal += "positivo";
-                break;
-                default:
-                    sinal += "negativo"
-                break;
-            }
-    }
-    alert(`O resultado da sua conta é ${conta.toFixed(2).replace(".",",")}, ele é , ${parImpar} e ${sinal}.`);
 
-    
+    let parOuImpar;
+    switch (resultado % 2) {
+        case 0:
+            parOuImpar = 'par';
+            break;
+        default:
+            parOuImpar = 'ímpar';
+            break;
+    }
+    let positivoOuNegativo;
+    switch (Math.sign(resultado)) {
+        case 1:
+            positivoOuNegativo = 'positivo';
+            break;
+        case -1:
+            positivoOuNegativo = 'negativo';
+            break;
+        default:
+            positivoOuNegativo = 'zero';
+            break;
+    }
+
+    let inteiroOuDecimal;
+    switch (true) {
+        case Number.isInteger(resultado):
+            inteiroOuDecimal = 'inteiro';
+            break;
+        default:
+            inteiroOuDecimal = 'decimal';
+            break;
+    }
+
     //SAÍDA
-    
+
+    alert(`O resultado da operação desses dois números é ${resultado}.`);
+    alert(`O número é ${parOuImpar}, ${positivoOuNegativo} e ${inteiroOuDecimal}.`);
+
+
 
 </script>
